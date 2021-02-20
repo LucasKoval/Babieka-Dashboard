@@ -9,7 +9,7 @@ import Tables from './sidebar/Tables';
 
 function Sidebar() {
     return (
-        <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
             <Brand />
             <Divider />
             <Dashboard />   {/* Nav-Item */}
