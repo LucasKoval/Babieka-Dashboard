@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import apiCall from '../../../../../apis/apiCall';
-import { BASE_API_PRODUCTS_URL } from '../../../../../apis/baseUrl';
+import apiCall from '../../../../../../apis/apiCall';
+import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
 
 function AmountProducts() {
     
