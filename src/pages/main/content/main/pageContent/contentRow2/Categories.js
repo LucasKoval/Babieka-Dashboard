@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import Category from '../../../../../assets/Category'
+import Category from '../../../../../../assets/Category'
 
 function Categories() {
     return (
