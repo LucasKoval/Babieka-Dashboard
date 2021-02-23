@@ -1,14 +1,7 @@
-<<<<<<< HEAD:src/pages/main/assets/contentRow2/Categories.js
-import React from 'react';
-import propTypes from 'prop-types';
-import Category from '../../../../assets/Category'
-=======
 import React, { useState, useEffect } from "react";
 import apiCall from '../../../../../../apis/apiCall';
 import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
 import Category from '../../../../../../containers/category/Category'
-
->>>>>>> 718c8c24a43217c6bf286ca21eead85afd4e0493:src/pages/main/content/main/pageContent/contentRow2/Categories.js
 
 function Categories() {
 
