@@ -1,14 +1,8 @@
-<<<<<<< HEAD:src/pages/main/assets/contentRow2/Categories.js
-import React from 'react';
-import propTypes from 'prop-types';
-import Category from '../../../../assets/Category'
-=======
 import React, { useState, useEffect } from "react";
 import apiCall from '../../../../../../apis/apiCall';
-import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
-import Category from '../../../../../../containers/category/Category'
+import { BASE_API_USERS_URL } from '../../../../../../apis/baseUrl';
+import UserUnit from '../../../../../../assets/UserUnit'
 
->>>>>>> 718c8c24a43217c6bf286ca21eead85afd4e0493:src/pages/main/content/main/pageContent/contentRow2/Categories.js
 
 function Categories() {
 
@@ -17,7 +11,7 @@ function Categories() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        apiCall(BASE_API_PRODUCTS_URL)
+        apiCall(BASE_API_USERS_URL)
         .then(response => {
             setData(response.data)
         })
@@ -37,13 +31,11 @@ function Categories() {
         <div className="col-lg-6 mb-4">						
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Categorías en la Base de Datos</h6>
+                    <h6 className="m-0 font-weight-bold text-primary">Listado de los usuarios</h6>
                 </div>
                 <div className="card-body">
                     <div className="row">
-                        <Category name='Casual' productsByCategory={data.meta.count_Category_Casual}/>
-                        <Category name='Fiesta' productsByCategory={data.meta.count_Category_Fiesta}/>
-                        <Category name='Sale' productsByCategory={data.meta.count_Category_Sale}/>
+                        <UserUnit />
                     </div>
                 </div>
             </div>
