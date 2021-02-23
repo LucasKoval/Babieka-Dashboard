@@ -3,7 +3,6 @@ import apiCall from '../../../../../../apis/apiCall';
 import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
 import Category from '../../../../../../containers/category/Category'
 
-
 function Categories() {
 
     const [data, setData] = useState(null);

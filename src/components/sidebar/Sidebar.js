@@ -1,11 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import Divider from './components/Divider';
-import Brand from './components/Brand';
-import Dashboard from './components/Dashboard';
-import Main from './components/Main';
-import Products from './components/Products';
-import Users from './components/Users';
+import Divider from './assets/Divider';
+import Brand from './assets/Brand';
+import Dashboard from './assets/Dashboard';
+import Main from './assets/Main';
+import Products from './assets/Products';
+import Users from './assets/Users';
 
 function Sidebar() {
     return (

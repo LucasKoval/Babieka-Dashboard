@@ -4,31 +4,45 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Sidebar from './containers/sidebar/Sidebar';
-import WrapperContent from './pages/main/WrapperContent';
-
-
+import Sidebar from './components/sidebar/Sidebar';
+import Header from '../../containers/header/Header';
+import Footer from '../../containers/footer/Footer';
+import Main from './pages/main/';
+import Products from './pages/products';
+import Users from './pages/users';
 
 function App() {
   return (
     <Router>
 
       <div id='wrapper'>
+        
         <Sidebar />
-        <Switch>
-          <Route exact path="/" exact={true}>
-            <WrapperContent />
-          </Route>
+        
+        <div id="content-wrapper" className="d-flex flex-column">
+            
+            <Header />
 
-          <Route path="/products">
-            <WrapperContent />
-          </Route>
+            <Switch>
+              
+              <Route exact path="/">
+                <Main />
+              </Route>
 
-          <Route path="/users">
-            <WrapperContent />
-          </Route>
+              <Route path="/products">
+                <Products />
+              </Route>
 
-        </Switch>
+              <Route path="/users">
+                <Users />
+              </Route>
+
+            </Switch>
+
+            <Footer />
+
+        </div>
+        
       </div>
 
     </Router>
