@@ -12,6 +12,8 @@ function WrapperContent() {
             <Footer />
         </div>
     );
+
+    
 }
 
 export default WrapperContent;
