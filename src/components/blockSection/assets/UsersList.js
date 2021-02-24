@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import apiCall from '../../../../../../apis/apiCall';
-import { BASE_API_USERS_URL } from '../../../../../../apis/baseUrl';
-import UserUnit from '../../../../../../assets/UserUnit'
+import { BASE_API_USERS_URL } from '../../../apis/baseUrl';
+import apiCall from '../../../apis/apiCall';
+import UserUnit from '../../UserUnit'
+import Loader from '../../../assets/Loader';
 
 
 function Categories() {
@@ -24,7 +25,7 @@ function Categories() {
         })
     }, []);
 
-    if (loading) return "Loading...";
+    if (loading) return <Loader />;
     if (error) return "Error!";
 
     return (

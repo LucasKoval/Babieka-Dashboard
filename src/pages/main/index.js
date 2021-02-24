@@ -1,15 +1,15 @@
 import React from 'react';
-import PageHeading from './pageContent/PageHeading'
-import ContentRow1 from './pageContent/ContentRow1'
-import ContentRow2 from './pageContent/ContentRow2'
+import PageHeading from '../../assets/PageHeading'
+import CardSection from '../../components/cardSection'
+import BlockSection from '../../components/blockSection'
 
 function Main() {
     return (
         <div id="content">
             <div className="container-fluid">
-                <PageHeading />
-                <ContentRow1 />
-                <ContentRow2 />
+                <PageHeading title='BABIEKA - Main'/>
+                <CardSection />
+                <BlockSection />
             </div>
         </div>
     );

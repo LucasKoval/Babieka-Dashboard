@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import apiCall from '../../../../../../apis/apiCall';
-import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
-import Category from '../../../../../../containers/category/Category'
+import { BASE_API_PRODUCTS_URL } from '../../../apis/baseUrl';
+import apiCall from '../../../apis/apiCall';
+import Block from '../../Block'
+import Loader from '../../../assets/Loader';
 
 function Categories() {
 
@@ -23,7 +24,7 @@ function Categories() {
         })
     }, []);
 
-    if (loading) return "Loading...";
+    if (loading) return <Loader />;
     if (error) return "Error!";
 
     return (
@@ -34,9 +35,9 @@ function Categories() {
                 </div>
                 <div className="card-body">
                     <div className="row">
-                        <Category name='Casual' productsByCategory={data.meta.count_Category_Casual}/>
-                        <Category name='Fiesta' productsByCategory={data.meta.count_Category_Fiesta}/>
-                        <Category name='Sale' productsByCategory={data.meta.count_Category_Sale}/>
+                        <Block name='Casual' productsByCategory={data.meta.count_Category_Casual}/>
+                        <Block name='Fiesta' productsByCategory={data.meta.count_Category_Fiesta}/>
+                        <Block name='Sale' productsByCategory={data.meta.count_Category_Sale}/>
                     </div>
                 </div>
             </div>

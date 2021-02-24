@@ -4,10 +4,10 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Sidebar from './components/sidebar/Sidebar';
-import Header from '../../containers/header/Header';
-import Footer from '../../containers/footer/Footer';
-import Main from './pages/main/';
+import Sidebar from './components/sidebar';
+import Header from './components/header';
+import Footer from './components/footer';
+import Main from './pages/main';
 import Products from './pages/products';
 import Users from './pages/users';
 

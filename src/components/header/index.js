@@ -1,7 +1,7 @@
 import React from 'react';
-import Alerts from './components/Alerts'
-import Messages from './components/Messages'
-import UserInfo from './components/UserInfo'
+import Alerts from './assets/Alerts'
+import Messages from './assets/Messages'
+import UserInfo from './assets/UserInfo'
 
 function Header() {
     return (

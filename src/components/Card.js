@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import apiCall from '../../../../../../apis/apiCall';
-import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
+import { BASE_API_USERS_URL } from '../apis/baseUrl';
+import { BASE_API_PRODUCTS_URL } from '../apis/baseUrl';
+import apiCall from '../apis/apiCall';
 
-function AmountProducts() {
+function Card() {
     
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ function AmountProducts() {
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">Artículos en la base de datos</div>
+                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">Tarjeta</div>
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{data.meta.count}</div>
                         </div>
                         <div className="col-auto">
@@ -44,4 +45,4 @@ function AmountProducts() {
     );
 }
 
-export default AmountProducts;
+export default Card;

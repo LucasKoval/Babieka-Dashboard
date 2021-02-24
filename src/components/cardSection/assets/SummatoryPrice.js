@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import apiCall from '../../../../../../apis/apiCall';
-import { BASE_API_PRODUCTS_URL } from '../../../../../../apis/baseUrl';
+import { BASE_API_PRODUCTS_URL } from '../../../apis/baseUrl';
+import apiCall from '../../../apis/apiCall';
+import Loader from '../../../assets/Loader';
+
 
 function SummatoryPrice() {
 
@@ -33,7 +35,7 @@ function SummatoryPrice() {
         setAmount(amount) 
     }, [data]);
 
-    if (loading) return "Loading...";
+    if (loading) return <Loader />;
     if (error) return "Error!";
 
     return (
@@ -43,9 +45,7 @@ function SummatoryPrice() {
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
                             <div className="text-xs font-weight-bold text-success text-uppercase mb-1">Costo Total de Artículos</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">
-                                $ {amount}
-                            </div>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800">$ {amount}</div>
                         </div>
                         <div className="col-auto">
                             <i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
