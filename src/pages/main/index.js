@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeading from '../../assets/PageHeading'
 import CardSection from '../../components/cardSection'
-import BlockSection from '../../components/blockSection'
+import BoxSection from '../../components/boxSection'
 
 function Main() {
     return (
@@ -9,7 +9,7 @@ function Main() {
             <div className="container-fluid">
                 <PageHeading title='BABIEKA - Main'/>
                 <CardSection />
-                <BlockSection />
+                <BoxSection />
             </div>
         </div>
     );

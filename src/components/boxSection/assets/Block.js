@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Category(props) {
+function Block(props) {
     return (
         <div className="col-lg-6 mb-4">
             <div className="justify-content-space-between card bg-danger text-white shadow">
@@ -13,4 +13,4 @@ function Category(props) {
     );
 }
 
-export default Category;
+export default Block;
