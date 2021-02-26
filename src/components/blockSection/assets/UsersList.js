@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { BASE_API_USERS_URL } from '../../../apis/baseUrl';
+import { BASE_API_USERS_LIST_URL } from '../../../apis/baseUrl';
 import apiCall from '../../../apis/apiCall';
 import UserUnit from '../../UserUnit'
 import Loader from '../../../assets/Loader';
+import { checkPropTypes } from "prop-types";
 
-
-function Categories() {
+function UsersList() {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [page, setPage] = useState(1);
 
-    useEffect(() => {
-        apiCall(BASE_API_USERS_URL)
+    const getPages =()=>{
+        apiCall(BASE_API_USERS_LIST_URL + "?page=" + page)
         .then(response => {
             setData(response.data)
         })
@@ -23,7 +24,15 @@ function Categories() {
         .finally(() => {
           setLoading(false);
         })
+    }
+
+    useEffect(() => {
+        getPages();
     }, []);
+
+    useEffect(() => {
+        getPages();
+    }, [page]);
 
     if (loading) return <Loader />;
     if (error) return "Error!";
@@ -36,7 +45,9 @@ function Categories() {
                 </div>
                 <div className="card-body">
                     <div className="row">
-                        <UserUnit />
+                        <button onClick={()=>{setPage(page - 1)}}>anterior</button>
+                        <UserUnit users={data.data.users} meta={data.meta}/>
+                        <button onClick={()=>{setPage(page + 1)}}>proxima</button>
                     </div>
                 </div>
             </div>
@@ -44,4 +55,4 @@ function Categories() {
     );
 }
 
-export default Categories;
+export default UsersList;
