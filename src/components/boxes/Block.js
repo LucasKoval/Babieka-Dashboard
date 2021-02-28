@@ -39,22 +39,22 @@ function Block(props) {
     if (loading) return <Loader />;
     if (error) return "Error!";
 
-    let filter = props.filter;
+    let filter = props.name;
     switch(filter) {
-        case 'casual':
+        case 'Casual':
             filter = data.meta.count_Category_Casual;
         break;
-        case 'fiesta':
+        case 'Fiesta':
             filter = data.meta.count_Category_Fiesta;
         break;
-        case 'sale':
+        case 'Sale':
             filter = data.meta.count_Category_Sale;
         break;
         case undefined:
             filter = undefined;
         break;
         default:
-            filter = data.meta.count_Category_Casual;
+            filter = undefined;
         break;
     }
 
