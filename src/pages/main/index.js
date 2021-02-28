@@ -22,9 +22,9 @@ function Main() {
                 
                 <div className="row">   {/*---- BOX SECTION ----*/}
                     <Box title='Categorías en la Base de Datos'>
-                        <Block name='Casual' apiUrl='products' filter='casual' />
-                        <Block name='Fiesta' apiUrl='products' filter='fiesta' />
-                        <Block name='Sale' apiUrl='products' filter='sale' />
+                        <Block name='Casual' apiUrl='products' />
+                        <Block name='Fiesta' apiUrl='products' />
+                        <Block name='Sale' apiUrl='products' />
                     </Box>
                     <Box title='Listado de Roles'>
                         <ul className="list-group list-group-flush text-center">
