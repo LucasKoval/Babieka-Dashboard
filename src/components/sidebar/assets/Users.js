@@ -5,7 +5,7 @@ function Tables() {
     return (
         <li className="nav-item">
             <Link to="/users" className="nav-link">
-                <i class="fas fa-users"></i>
+                <i className="fas fa-users"></i>
                 <span> Users</span>
             </Link>
         </li>
