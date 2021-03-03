@@ -1,21 +1,33 @@
 import React from 'react';
 import PageHeading from '../../assets/PageHeading'
-import UsersList from '../../components/blockSection/assets/UsersList';
-import Box from '../../components/box/Box'
-
-
+import UserCard from '../../components/cards/userCard';
+import ProductCard from '../../components/cards/productCard';
+import CashCard from '../../components/cards/cashCard';
+import Box from '../../components/boxes/Box'
+import DetailBox from '../../components/boxes/DetailBox'
+import Block from '../../components/boxes/Block'
+import ListBox from '../../components/boxes/listBox';
 
 function Users() {
+    
+    
     
     return (
         <div id="content">
             <div className="container-fluid">
-                <PageHeading title='BABIEKA - Users'/>
-                <UsersList/>
-                <Box title='Listado de usuarios'/>
-
-
                 
+                <PageHeading title='BABIEKA - Users'/>
+                
+                <div className="row">   {/*---- CARD SECTION ----*/}
+                    <UserCard title='Total de usuarios registrados' apiUrl='users' />
+                    <UserCard title='Total de Roles en Sistema' apiUrl='users' />
+                    <UserCard title='Total de usuarios registrados' apiUrl='users' />
+                </div>
+                
+                <div className="row">   {/*---- BOX SECTION ----*/}
+                    <ListBox title='listado usuarios' apiUrl='usersList'/>
+                </div>
+
             </div>
         </div>
     );

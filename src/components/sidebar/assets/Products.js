@@ -5,7 +5,7 @@ function Charts() {
     return (
         <li className="nav-item">
             <Link to="/products" className="nav-link">
-                <i className="fas fa-shopping-bag"></i>
+                <i class="fas fa-boxes"></i>
                 <span> Products</span>
             </Link>
         </li>
