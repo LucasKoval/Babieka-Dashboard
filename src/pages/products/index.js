@@ -6,6 +6,7 @@ import CashCard from '../../components/cards/cashCard';
 import Box from '../../components/boxes/Box'
 import DetailBox from '../../components/boxes/DetailBox'
 import Block from '../../components/boxes/Block'
+import ListBoxProducts from '../../components/boxes/listBoxProduct';
 
 function Products() {
     return (
@@ -24,7 +25,7 @@ function Products() {
                 </div>
                 
                 <div className="row">   {/*---- BOX SECTION ----*/}
-                    
+                    <ListBoxProducts title='listado de productos' apiUrl='productsList'/>
                 </div>
                 
             </div>

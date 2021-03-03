@@ -6,8 +6,12 @@ import CashCard from '../../components/cards/cashCard';
 import Box from '../../components/boxes/Box'
 import DetailBox from '../../components/boxes/DetailBox'
 import Block from '../../components/boxes/Block'
+import ListBox from '../../components/boxes/listBox';
 
 function Users() {
+    
+    
+    
     return (
         <div id="content">
             <div className="container-fluid">
@@ -21,7 +25,7 @@ function Users() {
                 </div>
                 
                 <div className="row">   {/*---- BOX SECTION ----*/}
-                    
+                    <ListBox title='listado usuarios' apiUrl='usersList'/>
                 </div>
 
             </div>
