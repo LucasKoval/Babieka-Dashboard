@@ -4,12 +4,13 @@ import {
     BASE_API_USERS_LIST_URL,
     BASE_API_PRODUCTS_URL,
     BASE_API_PRODUCTS_LIST_URL,
-    BASE_API_MODELS_URL
+    BASE_API_MODELS_URL,
+    BASE_API_MODELS_LIST_URL
 } from '../../apis/baseUrl';
 import Loader from '../../assets/Loader';
 import apiCall from '../../apis/apiCall';
 
-function ListBox(props) {
+function ListModelBox(props) {
     let apiUrl = props.apiUrl;
     switch(apiUrl) {
         case 'users':
@@ -27,6 +28,10 @@ function ListBox(props) {
         case 'models':
            apiUrl = BASE_API_MODELS_URL;
         break;
+        case 'modelsList':
+           apiUrl = BASE_API_MODELS_LIST_URL;
+        break;
+        
         case undefined:
             apiUrl = undefined;
         break;
@@ -36,7 +41,7 @@ function ListBox(props) {
     }
 
    
-    const [users, setUsers] = useState(null);
+    const [models, setModels] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(1);
@@ -46,7 +51,7 @@ function ListBox(props) {
     const getPages =()=>{
         apiCall(apiUrl + "?page=" + page)
         .then(response => {
-            setUsers(response.data.data.users)
+            setModels(response.data.data.products)
             setPreviousPages(response.data.meta.previousPage)
             setNextPages(response.data.meta.nextPage)
 
@@ -85,13 +90,13 @@ function ListBox(props) {
                     <div className="row justify-content-center">
                         <ul class="list-group list-group-flush">
                             {
-                                users && 
-                                users.map((user) =>{
-                                    return <li class="list-group-item">{user.first_name + " "+ user.last_name}</li>
+                                models && 
+                                models.map((model) =>{
+                                    return <li class="list-group-item"><img className="img-profile rounded-circle" src={model.urlImage} width="60" />{model.model.name+' '+model.model.color.name}</li>
                                 })
                             }
                             <div aria-label="Page navigation example">
-                                <ul class="pagination d-flex justify-content-center">
+                                <ul class="pagination d-flex justify-content-center align-items-end">
                                     <li class="page-item"><button class="page-link" onClick={()=>{previousPages && setPage(page - 1 )}}>Previous</button></li>
                                     <li class="page-item"><button class="page-link">{page}</button></li>
                                     <li class="page-item"><button class="page-link" onClick={()=>{nextPages && setPage(page + 1 )}}>Next</button></li>
@@ -105,4 +110,4 @@ function ListBox(props) {
     );
 }
 
-export default ListBox;
+export default ListModelBox;

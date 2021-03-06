@@ -87,11 +87,11 @@ function ListBoxProducts(props) {
                             {
                                 products && 
                                 products.map((product) =>{
-                                    return <li class="list-group-item">{product.model.name+' '+product.model.color.name+' '+product.size.number}</li>
+                                    return <li class="list-group-item">{product.model.name+' - Color:'+product.model.color.name+' - Talle:'+product.size.number+' - Precio:$'+product.price}</li>
                                 })
                             }
                             <div aria-label="Page navigation example">
-                                <ul class="pagination">
+                                <ul class="pagination d-flex justify-content-center">
                                     <li class="page-item"><button class="page-link" onClick={()=>{previousPages && setPage(page - 1 )}}>Previous</button></li>
                                     <li class="page-item"><button class="page-link">{page}</button></li>
                                     <li class="page-item"><button class="page-link" onClick={()=>{nextPages && setPage(page + 1 )}}>Next</button></li>
