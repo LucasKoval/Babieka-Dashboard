@@ -8,8 +8,9 @@ import {
 } from '../../apis/baseUrl';
 import Loader from '../../assets/Loader';
 import apiCall from '../../apis/apiCall';
+import {HorizontalBar} from 'react-chartjs-2';
 
-function ListBox(props) {
+function ChartUserBox(props) {
     let apiUrl = props.apiUrl;
     switch(apiUrl) {
         case 'users':
@@ -37,12 +38,26 @@ function ListBox(props) {
 
    
     const [users, setUsers] = useState(null);
+    const [items, setItems]=useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(1);
     const [previousPages, setPreviousPages] = useState(null);
     const [nextPages, setNextPages] = useState(null);
     
+    const data ={
+        labels:users,
+        datasets:[{
+            label:'Usuarios',
+            backgroundColor: 'rgba(0,255,0,1)',
+            borderColor:'black',
+            borderWidth:1,
+            hoverBackgroundColor:'rgba(0,255,0,0.2)',
+            hoverBoderColor: '#FFFF00',
+            data:items
+        }]
+    }
+
     const getPages =()=>{
         apiCall(apiUrl + "?page=" + page)
         .then(response => {
@@ -72,8 +87,13 @@ function ListBox(props) {
     if (loading) return <Loader />;
     if (error) return "Error!";
 
-    console.log('salio del anterior '+previousPages)
-    console.log('salio del siguiente '+nextPages)
+
+    let auxUsers=[];
+    let auxItems=[];
+
+    users.map(user=>{
+
+    })
     
     return (
         <div className="col-lg-6 mb-4">						
@@ -84,19 +104,7 @@ function ListBox(props) {
                 <div className="card-body">
                     <div className="row justify-content-center">
                         <ul class="list-group list-group-flush">
-                            {
-                                users && 
-                                users.map((user) =>{
-                                    return <li class="list-group-item">{user.first_name + " "+ user.last_name}</li>
-                                })
-                            }
-                            <div aria-label="Page navigation example">
-                                <ul class="pagination d-flex justify-content-center">
-                                    <li class="page-item"><button class="page-link" onClick={()=>{previousPages && setPage(page - 1 )}}>Previous</button></li>
-                                    <li class="page-item"><button class="page-link">{page}</button></li>
-                                    <li class="page-item"><button class="page-link" onClick={()=>{nextPages && setPage(page + 1 )}}>Next</button></li>
-                                </ul>
-                            </div>
+                            <HorizontalBar/>
                         </ul>
                     </div>
                 </div>
@@ -105,4 +113,4 @@ function ListBox(props) {
     );
 }
 
-export default ListBox;
+export default ChartUserBox;
