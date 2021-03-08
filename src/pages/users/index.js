@@ -4,9 +4,11 @@ import UserCard from '../../components/cards/userCard';
 import ProductCard from '../../components/cards/productCard';
 import CashCard from '../../components/cards/cashCard';
 import Box from '../../components/boxes/Box'
-import DetailBox from '../../components/boxes/DetailBox'
+import LastProductBox from '../../components/boxes/LastProductBox'
 import Block from '../../components/boxes/Block'
 import ListBox from '../../components/boxes/listBox';
+import UsersListBox from '../../components/boxes/UsersListBox';
+import LastUserBox from '../../components/boxes/LastUserBox'
 
 
 function Users() {
@@ -26,7 +28,7 @@ function Users() {
                 </div>
                 
                 <div className="row">   {/*---- BOX SECTION ----*/}
-                    <ListBox title='listado usuarios' apiUrl='usersList'/>
+                    <UsersListBox title='Listado de usuarios' apiUrl='usersList'/>
                 </div>
 
             </div>

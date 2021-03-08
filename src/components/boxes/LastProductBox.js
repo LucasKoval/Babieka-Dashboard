@@ -13,7 +13,7 @@ import Description from "./assets/Description";
 import Image from "./assets/Image";
 import Detail from "./assets/Detail";
 
-function DetailBox(props) {
+function LastProductBox(props) {
     let apiUrl = props.apiUrl;
     switch(apiUrl) {
         case 'users':
@@ -61,4 +61,4 @@ function DetailBox(props) {
     );
 }
 
-export default DetailBox;
+export default LastProductBox;
