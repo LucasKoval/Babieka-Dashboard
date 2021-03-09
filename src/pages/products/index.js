@@ -4,7 +4,7 @@ import UserCard from '../../components/cards/userCard';
 import ProductCard from '../../components/cards/productCard';
 import CashCard from '../../components/cards/cashCard';
 import Box from '../../components/boxes/Box'
-import DetailBox from '../../components/boxes/DetailBox'
+import LastProductBox from '../../components/boxes/LastProductBox'
 import Block from '../../components/boxes/Block'
 import ListBoxProducts from '../../components/boxes/listBoxProduct';
 import ListModelBox from '../../components/boxes/listModelBox';
@@ -19,9 +19,6 @@ function Products() {
                 <div className="row">   {/*---- CARD SECTION ----*/}
                     <ProductCard title='Artículos en la base de datos' apiUrl='products' />
                     <ProductCard title='Modelos en la base de datos' apiUrl='models' />
-                    <ProductCard title='Artículos en la base de datos' apiUrl='products' />
-                    <CashCard title='Costo Total de Artículos' apiUrl='products' />
-                    <CashCard title='Costo Total de Artículos' apiUrl='products' />
                     <CashCard title='Costo Total de Artículos' apiUrl='products' />
                 </div>
                 

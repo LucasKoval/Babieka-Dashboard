@@ -10,7 +10,7 @@ import {
 import Loader from '../../assets/Loader';
 import apiCall from '../../apis/apiCall';
 
-function ListModelBox(props) {
+function UsersListBox(props) {
     let apiUrl = props.apiUrl;
     switch(apiUrl) {
         case 'users':
@@ -41,7 +41,7 @@ function ListModelBox(props) {
     }
 
    
-    const [models, setModels] = useState(null);
+    const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(1);
@@ -51,7 +51,7 @@ function ListModelBox(props) {
     const getPages =()=>{
         apiCall(apiUrl + "?page=" + page)
         .then(response => {
-            setModels(response.data.data.products)
+            setUsers(response.data.data.users)
             setPreviousPages(response.data.meta.previousPage)
             setNextPages(response.data.meta.nextPage)
 
@@ -87,9 +87,9 @@ function ListModelBox(props) {
                     <div className="row justify-content-center">
                         <ul class="list-group list-group-flush">
                             {
-                                models && 
-                                models.map((model) =>{
-                                    return <li class="list-group-item"><img className="img-profile rounded-circle mr-2" src={model.urlImage} width="60" />{model.model.name+' '+model.model.color.name}</li>
+                                users && 
+                                users.map((user) =>{
+                                    return <li class="list-group-item"><img className="img-profile rounded-circle mr-2" src={user.urlImage} width="60" />{user.first_name+' '+user.last_name}</li>
                                 })
                             }
                             <div aria-label="Page navigation example">
@@ -107,4 +107,4 @@ function ListModelBox(props) {
     );
 }
 
-export default ListModelBox;
+export default UsersListBox;

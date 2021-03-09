@@ -4,16 +4,15 @@ import {
     BASE_API_USERS_LIST_URL,
     BASE_API_PRODUCTS_URL,
     BASE_API_PRODUCTS_LIST_URL,
-    BASE_API_MODELS_URL
-} from '../../apis/baseUrl';
-import useFetch from '../../apis/useFetch';
-import Loader from '../../assets/Loader';
-import Name from "./assets/Name";
-import Description from "./assets/Description";
-import Image from "./assets/Image";
-import Detail from "./assets/Detail";
+    BASE_API_MODELS_URL,
+    BASE_API_ORDERS_URL
+} from '../../../apis/baseUrl';
+import useFetch from '../../../apis/useFetch';
+import Loader from '../../../assets/Loader';
+import Title from './assets/Title';
+import Value from './assets/Value';
 
-function DetailBox(props) {
+function Card(props) {
     let apiUrl = props.apiUrl;
     switch(apiUrl) {
         case 'users':
@@ -31,6 +30,9 @@ function DetailBox(props) {
         case 'models':
            apiUrl = BASE_API_MODELS_URL;
         break;
+        case 'orders':
+           apiUrl = BASE_API_ORDERS_URL;
+        break;
         case undefined:
             apiUrl = undefined;
         break;
@@ -42,23 +44,24 @@ function DetailBox(props) {
     const { data, loading, error } = useFetch(apiUrl, []);
     if (loading) return <Loader />;
     if (error) return "Error!";
-    const lastItem = data.data.products[data.data.products.length - 1]
 
     return (
-        <div className="col-lg-6 mb-4">
-            <div className="card shadow mb-4">
-                <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">{ props.title }</h6>
-                </div>
+        <div className="col-md-4 mb-4">
+            <div className="card border-left-danger shadow h-100 py-2">
                 <div className="card-body">
-                    <Image image={lastItem.urlImage} />
-                    <Name name={lastItem.model.name} />
-                    <Description description={lastItem.model.description} />
-                    <Detail detail={lastItem.urlDetail} />
+                    <div className="row no-gutters align-items-center">
+                        <div className="col mr-2">
+                            <Title title={ props.title } />
+                            <Value content={ data.meta.count } />
+                        </div>
+                        <div className="col-auto">
+                            <i className="fas fa-shopping-bag fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
 
-export default DetailBox;
+export default Card;
