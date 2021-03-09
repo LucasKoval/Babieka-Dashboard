@@ -76,9 +76,6 @@ function UsersListBox(props) {
 
     if (loading) return <Loader />;
     if (error) return "Error!";
-
-    console.log('salio del anterior '+previousPages)
-    console.log('salio del siguiente '+nextPages)
     
     return (
         <div className="col-lg-6 mb-4">						
@@ -92,7 +89,7 @@ function UsersListBox(props) {
                             {
                                 users && 
                                 users.map((user) =>{
-                                    return <li class="list-group-item"><img className="img-profile rounded-circle" src={user.urlImage} width="60" />{user.first_name+' '+user.last_name}</li>
+                                    return <li class="list-group-item"><img className="img-profile rounded-circle mr-2" src={user.urlImage} width="60" />{user.first_name+' '+user.last_name}</li>
                                 })
                             }
                             <div aria-label="Page navigation example">

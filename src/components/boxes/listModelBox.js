@@ -76,9 +76,6 @@ function ListModelBox(props) {
 
     if (loading) return <Loader />;
     if (error) return "Error!";
-
-    console.log('salio del anterior '+previousPages)
-    console.log('salio del siguiente '+nextPages)
     
     return (
         <div className="col-lg-6 mb-4">						
@@ -92,7 +89,7 @@ function ListModelBox(props) {
                             {
                                 models && 
                                 models.map((model) =>{
-                                    return <li class="list-group-item"><img className="img-profile rounded-circle" src={model.urlImage} width="60" />{model.model.name+' '+model.model.color.name}</li>
+                                    return <li class="list-group-item"><img className="img-profile rounded-circle mr-2" src={model.urlImage} width="60" />{model.model.name+' '+model.model.color.name}</li>
                                 })
                             }
                             <div aria-label="Page navigation example">

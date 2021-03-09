@@ -19,9 +19,6 @@ function Products() {
                 <div className="row">   {/*---- CARD SECTION ----*/}
                     <ProductCard title='Artículos en la base de datos' apiUrl='products' />
                     <ProductCard title='Modelos en la base de datos' apiUrl='models' />
-                    <ProductCard title='Artículos en la base de datos' apiUrl='products' />
-                    <CashCard title='Costo Total de Artículos' apiUrl='products' />
-                    <CashCard title='Costo Total de Artículos' apiUrl='products' />
                     <CashCard title='Costo Total de Artículos' apiUrl='products' />
                 </div>
                 
