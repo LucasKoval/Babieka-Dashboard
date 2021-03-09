@@ -4,8 +4,9 @@ import UserCard from '../../components/cards/userCard';
 import ProductCard from '../../components/cards/productCard';
 import CashCard from '../../components/cards/cashCard';
 import Box from '../../components/boxes/Box'
-import DetailBox from '../../components/boxes/DetailBox'
+import LastProductBox from '../../components/boxes/LastProductBox'
 import Block from '../../components/boxes/Block'
+import LastUserBox from '../../components/boxes/LastUserBox'
 
 function Main() {
     return (
@@ -35,7 +36,8 @@ function Main() {
                             <li className="list-group-item">Client</li>
                         </ul>
                     </Box>
-                    <DetailBox title='Ultimo Artículo Cargado' apiUrl='products' />
+                    <LastProductBox title='Ultimo Artículo Cargado' apiUrl='products' />
+                    <LastUserBox title='Ultimo Usuario Creado' apiUrl='users' />
                 </div>
                 
             </div>
